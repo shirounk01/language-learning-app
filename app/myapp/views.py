@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.core.paginator import Paginator
+import random
 
 
 # Create your views here.
@@ -34,3 +35,8 @@ def dictionary(request):
         "dictionary.html",
         {"words": words, "parts_of_speech": pos.keys},
     )
+
+
+def quiz(request):
+    quiz_words = random.sample(list(Word.objects.all()), k=3)
+    return render(request, "type_quiz.html", {"words": quiz_words})

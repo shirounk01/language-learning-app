@@ -21,3 +21,7 @@ body{
     padding: 0px;
     margin: 0px;
 }
+
+.hyphens-auto{
+    hyphens: auto;
+}

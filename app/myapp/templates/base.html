@@ -13,6 +13,7 @@
     <meta name="description" content="Language learning application">
     <meta name="keywords" content="language">
     <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <script src="{% static "js/jquery-3.7.1.min.js" %}"></script>
     {% block extra_css %}
     {% endblock extra_css %}
   </head>
@@ -21,6 +22,7 @@
       <a class="navbar-brand" href="{% url "home" %}">Navbar</a>
       <div>
         <a href="{% url "dictionary" %}">Dictionary</a>
+        <a href="{% url "quiz" %}">Quiz</a>
       </div>
       <form class="form-inline" method="get" action="{% url "definition" %}">
         <div class="form-group">

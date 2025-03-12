@@ -42,16 +42,16 @@
         <div class="d-flex justify-content-evenly align-items-center">
             {% if words.has_previous %}
                 <a href="?page={{ words.previous_page_number }}"
-                   class="btn btn-outline-primary rounded-circle">&#x003C;</a>
+                   class="btn btn-outline-primary rounded-circle">&lt;</a>
             {% else %}
-                <a class="btn btn-secondary disabled rounded-circle">&#x003C;</a>
+                <a class="btn btn-secondary disabled rounded-circle">&lt;</a>
             {% endif %}
             <div>{{ words.number }} / {{ words.paginator.num_pages }}</div>
             {% if words.has_next %}
                 <a href="?page={{ words.next_page_number }}"
-                   class="btn btn-outline-primary rounded-circle">&#x3e;</a>
+                   class="btn btn-outline-primary rounded-circle">&gt;</a>
             {% else %}
-                <a class="btn btn-secondary disabled rounded-circle">&#x3e;</a>
+                <a class="btn btn-secondary disabled rounded-circle">&gt;</a>
             {% endif %}
         </div>
     </div>

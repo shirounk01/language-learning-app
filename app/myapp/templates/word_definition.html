@@ -13,7 +13,7 @@
         {% if word.number %}{{ word.number|lower }}.{% endif %}
         {% if word.conjugation %}conj. {{ word.conjugation }}{% endif %}
       </div>
-      <div class="word-translation">{{ word.translation }}</div>
+      <div class="word-translation hyphens-auto">{{ word.translation }}</div>
       <hr />
       {% if word.required_case %}
         <div class="word-reqs">
