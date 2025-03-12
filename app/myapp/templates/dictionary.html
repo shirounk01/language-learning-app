@@ -6,7 +6,24 @@
             <thead>
                 <tr>
                     <th class="col-3">Word</th>
-                    <th class="col-2">Part of Speech</th>
+                    <th class="col-2">
+                        <div class="dropdown">
+                            <a class="text-reset text-decoration-none text-dark dropdown-toggle"
+                               type="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">Part of Speech</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{% url "dictionary" %}">All</a>
+                                </li>
+                                {% for pos in parts_of_speech %}
+                                    <li>
+                                        <a class="dropdown-item" href="?pos={{ pos }}">{{ pos }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </th>
                     <th class="col-7">Translation</th>
                 </tr>
             </thead>
@@ -22,13 +39,14 @@
                 {% endfor %}
             </tbody>
         </table>
-        <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-evenly align-items-center">
             {% if words.has_previous %}
                 <a href="?page={{ words.previous_page_number }}"
                    class="btn btn-outline-primary rounded-circle">&#x003C;</a>
             {% else %}
                 <a class="btn btn-secondary disabled rounded-circle">&#x003C;</a>
             {% endif %}
+            <div>{{ words.number }} / {{ words.paginator.num_pages }}</div>
             {% if words.has_next %}
                 <a href="?page={{ words.next_page_number }}"
                    class="btn btn-outline-primary rounded-circle">&#x3e;</a>

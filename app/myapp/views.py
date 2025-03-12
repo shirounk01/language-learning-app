@@ -15,7 +15,22 @@ def definition_page(request):
 
 
 def dictionary(request):
-    p = Paginator(Word.objects.all(), 2)
+
     page = request.GET.get("page")
+    pos_filter = request.GET.get("pos")
+
+    pos = {pos[1]: pos[0] for pos in Word.PART_OF_SPEECH}
+
+    words_list = (
+        Word.objects.filter(part_of_speech=pos[pos_filter])
+        if pos_filter
+        else Word.objects.all()
+    )
+    p = Paginator(words_list, 2)
     words = p.get_page(page)
-    return render(request, "dictionary.html", {"words": words})
+
+    return render(
+        request,
+        "dictionary.html",
+        {"words": words, "parts_of_speech": pos.keys},
+    )
