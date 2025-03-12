@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(243, 243, 243);
+}
+
+.navbar {
+    background-color: rgb(178, 226, 255);
+}
+
+.paper{
+    background-color: white;
+    width: 50%;
+    min-width: 700px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 50px;
+    padding: 0px;
+    margin: 0px;
+}

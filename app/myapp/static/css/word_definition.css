@@ -1,0 +1,28 @@
+
+.word-name{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 80px;
+    padding: 0px;
+}
+
+.word-specs{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-top: -30px;
+    margin-bottom: 15px;
+    padding: 0px;
+}
+
+.word-translation{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.word-reqs{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: gray;
+}

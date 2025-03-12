@@ -8,10 +8,11 @@ from .models import *
 @admin.register(Word)
 class WordAdmin(admin.ModelAdmin):
     list_display = (
-        "word",
+        "name",
         "translation",
         "part_of_speech",
         "gender",
         "conjugation",
+        "required_case",
     )
     list_filter = ("part_of_speech", "gender", "conjugation")

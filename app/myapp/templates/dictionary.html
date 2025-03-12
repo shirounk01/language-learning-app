@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="paper p-5">
+        <p class="title">Dictionary</p>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="col-3">Word</th>
+                    <th class="col-2">Part of Speech</th>
+                    <th class="col-7">Translation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for word in words %}
+                    <tr>
+                        <td>
+                            <a href="{% url "definition" %}?definition={{ word.name }}">{{ word.name }}</a>
+                        </td>
+                        <td>{{ word.get_part_of_speech_display }}</td>
+                        <td>{{ word.translation }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-around">
+            {% if words.has_previous %}
+                <a href="?page={{ words.previous_page_number }}"
+                   class="btn btn-outline-primary rounded-circle">&#x003C;</a>
+            {% else %}
+                <a class="btn btn-secondary disabled rounded-circle">&#x003C;</a>
+            {% endif %}
+            {% if words.has_next %}
+                <a href="?page={{ words.next_page_number }}"
+                   class="btn btn-outline-primary rounded-circle">&#x3e;</a>
+            {% else %}
+                <a class="btn btn-secondary disabled rounded-circle">&#x3e;</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

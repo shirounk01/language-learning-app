@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load bootstrap5 %}
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    {% load static %}
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Language learning application">
+    <meta name="keywords" content="language">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    {% block extra_css %}
+    {% endblock extra_css %}
+  </head>
+  <body>
+    <nav class="navbar navbar-light justify-content-between px-5">
+      <a class="navbar-brand" href="{% url "home" %}">Navbar</a>
+      <div>
+        <a href="{% url "dictionary" %}">Dictionary</a>
+      </div>
+      <form class="form-inline" method="get" action="{% url "definition" %}">
+        <div class="form-group">
+          <input class="form-control"
+                 name="definition"
+                 placeholder="Search"
+                 aria-label="Search">
+        </div>
+      </form>
+    </nav>
+    <div class="d-flex justify-content-center my-5">
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </body>
+</html>
