@@ -1,21 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/word_definition.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+{% endblock extra_css %}
 {% block content %}
     <script>
-        $(document).on("keypress", "#answer", function(e){
-            if(e.which == 13){
-                var inputVal = $(this).val();
-                $("#result").text(inputVal)
-                $('#result').toggleClass('d-none');
-            }
-        });
-
-        $(document).on("click", "#next", function(e){
-            index = index+1;
-            $('#result').toggleClass('d-none');
-            updateWord()
-
-        })
-
         var words = [
                 {% for word in words %}
                 {
@@ -26,26 +16,79 @@
         ];
         var index = 0;
 
-        function updateWord(){
-            $("#word").text(words[index].name)
-            console.log(words[index].name)
-        }
-        $(document).ready(function() {
-            updateWord();
-          });
+        var resultBoxColorClass = "";
+        var resultBoxText = "";
+        var score = 0;
 
+        
+        $(document).ready(function() {
+            $("#total").text(words.length);
+            updateWord();
+        });
+        
+        function updateWord(){
+            $("#current-score").text(score);
+            $("#answer").val("");
+
+            if(index == words.length){
+                $(location).prop('href', '{% url "home" %}')
+            }
+
+            $("#word").text(words[index].name);
+            $("#word").attr("href", "{% url "definition" %}?definition=" + words[index].name);
+        }
+
+        $(document).on("keypress", "#answer", function(e){
+            if(e.which == 13) {
+                if($("#result-box").hasClass("d-none")){
+                    var inputVal = $(this).val();
+
+                    if(inputVal == words[index].translation){
+                        score++;
+                        resultBoxColorClass = "bg-correct";
+                        resultBoxText = "That is correct!";
+                    }
+                    else{
+                        resultBoxColorClass = "bg-fail";
+                        resultBoxText = "Wrong! The correct answer was " + words[index].translation;
+                    }
+
+                    $("#result-text").text(resultBoxText);
+                    $('#result-text').addClass(resultBoxColorClass);
+                    $('#result-box').toggleClass('d-none');
+                }
+                else{
+                    index++;
+                    $('#result-box').toggleClass('d-none');
+                    $('#result-text').removeClass(resultBoxColorClass);
+                    updateWord();
+                }
+            }
+        });
     </script>
     <div class="paper p-5">
-        Translate the following word:
-        <div id="word"></div>
-        <div>
-            <input class="form-control"
-                   id="answer"
-                   placeholder="Search"
-                   aria-label="Search">
+        <div class="word-name text-center ">
+            <a id="word"
+               class="text-reset text-decoration-none text-dark"
+               href=""
+               target="_blank"></a>
         </div>
-        <hr>
-        <div id="result" class="d-none">asdasf</div>
-        <a id="next">next</a>
+        <div class="d-flex justify-content-between mx-4">
+            <p>Translate the word above</p>
+            <p>
+                Score <span id="current-score"></span>/<span id="total"></span>
+            </p>
+        </div>
+        <div class=" d-flex justify-content-center">
+            <div class="col-8">
+                <input class="form-control" id="answer" placeholder="Your answer">
+            </div>
+        </div>
+        <hr class="m-0 mt-4 mx-4 pb-0">
+        <div id="result-box" class="d-none">
+            <div class="d-flex justify-content-center">
+                <div id="result-text" class="result-text text-center p-3 col-8"></div>
+            </div>
+        </div>
     </div>
 {% endblock content %}

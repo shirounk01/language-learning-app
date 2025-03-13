@@ -1,0 +1,11 @@
+.bg-correct{
+    background-color: rgb(149, 223, 159);
+}
+
+.bg-fail{
+    background-color: rgb(223, 149, 149);
+}
+
+.result-text{
+    border-radius: 0px 0px 30px 30px;
+}
