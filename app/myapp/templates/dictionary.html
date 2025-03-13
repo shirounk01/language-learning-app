@@ -1,58 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="paper p-5">
-        <p class="title">Dictionary</p>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th class="col-3">Word</th>
-                    <th class="col-2">
-                        <div class="dropdown">
-                            <a class="text-reset text-decoration-none text-dark dropdown-toggle"
-                               type="button"
-                               data-bs-toggle="dropdown"
-                               aria-expanded="false">Part of Speech</a>
-                            <ul class="dropdown-menu">
+    <p class="title">Dictionary</p>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th class="col-3">Word</th>
+                <th class="col-2">
+                    <div class="dropdown">
+                        <a class="text-reset text-decoration-none text-dark dropdown-toggle"
+                           type="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">Part of Speech</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{% url "dictionary" %}?pos=All">All</a>
+                            </li>
+                            {% for pos in parts_of_speech %}
                                 <li>
-                                    <a class="dropdown-item" href="{% url "dictionary" %}?pos=All">All</a>
+                                    <a class="dropdown-item" href="?pos={{ pos }}">{{ pos }}</a>
                                 </li>
-                                {% for pos in parts_of_speech %}
-                                    <li>
-                                        <a class="dropdown-item" href="?pos={{ pos }}">{{ pos }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </th>
-                    <th class="col-7">Translation</th>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </th>
+                <th class="col-7">Translation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word in words %}
+                <tr>
+                    <td>
+                        <a href="{% url "definition" %}?definition={{ word.name }}">{{ word.name }}</a>
+                    </td>
+                    <td>{{ word.get_part_of_speech_display }}</td>
+                    <td>{{ word.translation }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for word in words %}
-                    <tr>
-                        <td>
-                            <a href="{% url "definition" %}?definition={{ word.name }}">{{ word.name }}</a>
-                        </td>
-                        <td>{{ word.get_part_of_speech_display }}</td>
-                        <td>{{ word.translation }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-evenly align-items-center">
-            {% if words.has_previous %}
-                <a href="?page={{ words.previous_page_number }}"
-                   class="btn btn-outline-primary rounded-circle">&lt;</a>
-            {% else %}
-                <a class="btn btn-secondary disabled rounded-circle">&lt;</a>
-            {% endif %}
-            <div>{{ words.number }} / {{ words.paginator.num_pages }}</div>
-            {% if words.has_next %}
-                <a href="?page={{ words.next_page_number }}"
-                   class="btn btn-outline-primary rounded-circle">&gt;</a>
-            {% else %}
-                <a class="btn btn-secondary disabled rounded-circle">&gt;</a>
-            {% endif %}
-        </div>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-evenly align-items-center">
+        {% if words.has_previous %}
+            <a href="?page={{ words.previous_page_number }}"
+               class="btn btn-outline-primary rounded-circle">&lt;</a>
+        {% else %}
+            <a class="btn btn-secondary disabled rounded-circle">&lt;</a>
+        {% endif %}
+        <div>{{ words.number }} / {{ words.paginator.num_pages }}</div>
+        {% if words.has_next %}
+            <a href="?page={{ words.next_page_number }}"
+               class="btn btn-outline-primary rounded-circle">&gt;</a>
+        {% else %}
+            <a class="btn btn-secondary disabled rounded-circle">&gt;</a>
+        {% endif %}
     </div>
 {% endblock content %}

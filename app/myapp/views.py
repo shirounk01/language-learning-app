@@ -12,6 +12,8 @@ def home_page(request):
 def definition_page(request):
     definition = request.GET.get("definition")
     word = Word.objects.all().filter(name=definition).first()
+    if not word:
+        word = Word.objects.all().filter(translation=definition).first()
     return render(request, "word_definition.html", {"word": word})
 
 

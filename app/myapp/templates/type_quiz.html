@@ -67,29 +67,27 @@
             }
         });
     </script>
-    <div class="paper p-5">
-        <div class="word-name text-center ">
-            <a id="word"
-               class="text-reset text-decoration-none text-dark"
-               href=""
-               target="_blank"></a>
+    <div class="word-name text-center ">
+        <a id="word"
+           class="text-reset text-decoration-none text-dark"
+           href=""
+           target="_blank"></a>
+    </div>
+    <div class="d-flex justify-content-between mx-4">
+        <p>Translate the word above</p>
+        <p>
+            Score <span id="current-score"></span>/<span id="total"></span>
+        </p>
+    </div>
+    <div class=" d-flex justify-content-center">
+        <div class="col-8">
+            <input class="form-control" id="answer" placeholder="Your answer">
         </div>
-        <div class="d-flex justify-content-between mx-4">
-            <p>Translate the word above</p>
-            <p>
-                Score <span id="current-score"></span>/<span id="total"></span>
-            </p>
-        </div>
-        <div class=" d-flex justify-content-center">
-            <div class="col-8">
-                <input class="form-control" id="answer" placeholder="Your answer">
-            </div>
-        </div>
-        <hr class="m-0 mt-4 mx-4 pb-0">
-        <div id="result-box" class="d-none">
-            <div class="d-flex justify-content-center">
-                <div id="result-text" class="result-text text-center p-3 col-8"></div>
-            </div>
+    </div>
+    <hr class="m-0 mt-4 mx-4 pb-0">
+    <div id="result-box" class="d-none">
+        <div class="d-flex justify-content-center">
+            <div id="result-text" class="result-text text-center p-3 col-8"></div>
         </div>
     </div>
 {% endblock content %}
