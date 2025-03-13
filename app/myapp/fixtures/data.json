@@ -1,0 +1,14 @@
+[
+    {
+        "model": "myapp.Word",
+        "fields":{
+            "name": "a",
+            "translation": "b",
+            "part_of_speech": "N",
+            "gender": "M",
+            "number": "SG",
+            "conjugation": "I",
+            "required_case": "Nom, Acc"
+        }
+    }
+]
