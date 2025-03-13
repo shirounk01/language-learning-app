@@ -14,7 +14,7 @@
                                aria-expanded="false">Part of Speech</a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="{% url "dictionary" %}">All</a>
+                                    <a class="dropdown-item" href="{% url "dictionary" %}?pos=All">All</a>
                                 </li>
                                 {% for pos in parts_of_speech %}
                                     <li>

@@ -16,19 +16,28 @@ def definition_page(request):
 
 
 def dictionary(request):
-
-    page = request.GET.get("page")
-    pos_filter = request.GET.get("pos")
+    if not len(request.GET):
+        del request.session["previous_filter"]
 
     pos = {pos[1]: pos[0] for pos in Word.PART_OF_SPEECH}
 
-    words_list = (
-        Word.objects.filter(part_of_speech=pos[pos_filter])
-        if pos_filter
-        else Word.objects.all()
-    )
+    def retrieve_data(filter):
+        if filter in list(pos.keys()):
+            return Word.objects.filter(part_of_speech=pos[filter])
+        else:
+            return Word.objects.all()
+
+    page = request.GET.get("page")
+
+    pos_filter = request.GET.get("pos")
+    if pos_filter == None:
+        pos_filter = request.session.pop("previous_filter", None)
+
+    words_list = retrieve_data(pos_filter)
     p = Paginator(words_list, 2)
     words = p.get_page(page)
+
+    request.session["previous_filter"] = pos_filter
 
     return render(
         request,
