@@ -1,8 +1,13 @@
-{% extends "base.html" %}
-{% load static %}
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/word_definition.css' %}">
-{% endblock extra_css %}
-{% block content %}
+<script>
+    $("#current-score").text(score)
+    $("#total").text(words.length)
+</script>
+<div class="d-flex justify-content-center">
     <p class="word-name">Congratulations</p>
-{% endblock content %}
+</div>
+<p class="text-center word-translation">
+    You have answered correctly to <span id="current-score"></span> questions out of the <span id="total"></span> provided.
+</p>
+<div class="d-flex flex-row-reverse mt-2">
+    <a class="btn btn-outline-primary" href="{% url "home" %}">Return</a>
+</div>

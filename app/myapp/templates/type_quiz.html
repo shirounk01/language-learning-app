@@ -30,7 +30,8 @@
             $("#answer").val("");
 
             if(index == words.length){
-                $(location).prop("href", "{% url "home" %}")
+                $("#quiz-body").load("{% url "quiz_end_screen" %}");
+                return;
             }
 
             $("#word").text(words[index].name);
