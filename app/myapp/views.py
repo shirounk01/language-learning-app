@@ -89,4 +89,10 @@ def quiz(request):
     if quiz_type == "type":
         return render(request, "type_quiz.html", {"words": quiz_words})
     elif quiz_type == "choice":
-        pass
+        for index in range(len(quiz_words)):
+            choices = random.sample(quiz_words[:index] + quiz_words[index + 1 :], k=3)
+            quiz_words[index].choices = [quiz_words[index].translation] + [
+                tr.translation for tr in choices
+            ]
+            random.shuffle(quiz_words[index].choices)
+        return render(request, "choice_quiz.html", {"words": quiz_words})

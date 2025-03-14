@@ -6,36 +6,16 @@
 {% endblock extra_css %}
 {% block quiz-block %}
     <script>
-        var words = [
-                {% for word in words %}
-                {
-                    "name": "{{word.name}}",
-                    "translation": "{{word.translation}}"
-                },
-                {% endfor %}
-        ];
-        var index = 0;
-
-        var resultBoxColorClass = "";
-        var resultBoxText = "";
-        var score = 0;
-
         $(document).ready(function() {
             $("#total").text(words.length);
-            updateWord();
+            updateQuestion();
         });
         
-        function updateWord(){
-            $("#current-score").text(score);
+        function updateQuestion(){
+            updateWord()
+
             $("#answer").val("");
-
-            if(index == words.length){
-                $("#quiz-body").load("{% url "quiz_end_screen" %}");
-                return;
-            }
-
             $("#word").text(words[index].name);
-            $("#word").attr("href", "{% url "definition" %}?definition=" + words[index].name);
         }
 
         $(document).on("keypress", "#answer", function(e){
@@ -43,25 +23,11 @@
                 if($("#result-box").hasClass("d-none")){
                     var inputVal = $(this).val();
 
-                    if(inputVal == words[index].translation){
-                        score++;
-                        resultBoxColorClass = "bg-correct";
-                        resultBoxText = "That is correct!";
-                    }
-                    else{
-                        resultBoxColorClass = "bg-fail";
-                        resultBoxText = "Wrong! The correct answer was " + words[index].translation;
-                    }
-
-                    $("#result-text").text(resultBoxText);
-                    $("#result-text").addClass(resultBoxColorClass);
-                    $("#result-box").toggleClass("d-none");
+                    handleResult(inputVal)
                 }
                 else{
-                    index++;
-                    $("#result-box").toggleClass("d-none");
-                    $("#result-text").removeClass(resultBoxColorClass);
-                    updateWord();
+                    cleanUpQuestion()
+                    updateQuestion();
                 }
             }
         });
@@ -75,7 +41,7 @@
     <div class="d-flex justify-content-between mx-4">
         <p>Translate the word above</p>
         <p>
-            Score <span id="current-score"></span>/<span id="total"></span>
+            Score <span id="current-score">0</span>/<span id="total"></span>
         </p>
     </div>
     <div class=" d-flex justify-content-center">

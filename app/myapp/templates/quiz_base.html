@@ -1,6 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
-    <script></script>
+    <script>
+        var words = [
+            {% for word in words %}
+            {
+                "name": "{{word.name}}",
+                "translation": "{{word.translation}}",
+                {% if word.choices %}
+                    "choices": {{ word.choices|safe }}
+                {% else %}
+                    "choices": []
+                {% endif %}
+            },
+            {% endfor %}
+        ];
+        var index = 0;
+
+        var resultBoxColorClass = "";
+        var resultBoxText = "";
+        var score = 0;
+
+        function updateWord(){
+            if(index == words.length){
+                $("#quiz-body").load("{% url "quiz_end_screen" %}");
+                return;
+            }
+
+            $("#word").attr("href", "{% url "definition" %}?definition=" + words[index].name);
+
+        }
+
+        function handleResult(inputVal){
+            if(inputVal == words[index].translation){
+                score++;
+                resultBoxColorClass = "bg-correct";
+                resultBoxText = "That is correct!";
+            }
+            else{
+                resultBoxColorClass = "bg-fail";
+                resultBoxText = "Wrong! The correct answer was " + words[index].translation;
+            }
+
+            $("#current-score").text(score);
+            $("#result-text").text(resultBoxText);
+            $("#result-text").addClass(resultBoxColorClass);
+            $("#result-box").toggleClass("d-none");
+        }
+
+        function cleanUpQuestion(){
+            index++;
+            $("#result-box").toggleClass("d-none");
+            $("#result-text").removeClass(resultBoxColorClass);
+        }
+    </script>
     <div id="quiz-body">
         {% block quiz-block %}
         {% endblock quiz-block %}
