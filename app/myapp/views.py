@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from .models import *
 from django.core.paginator import Paginator
+
 import random
+import base64
+import json
+import urllib.parse
 
 
 # Create your views here.
@@ -48,6 +52,41 @@ def dictionary(request):
     )
 
 
+def quiz_selection(request):
+    return render(request, "quiz_selection_page.html")
+
+
+def quiz_end_screen(request):
+    return render(request, "quiz_end_screen.html")
+
+
 def quiz(request):
-    quiz_words = random.sample(list(Word.objects.all()), k=3)
-    return render(request, "type_quiz.html", {"words": quiz_words})
+    data = list((request.GET.dict().keys()))[0]
+    try:
+        data = urllib.parse.unquote(data)
+        decoded_json = base64.b64decode(data).decode("utf-8")
+        quiz_info_json = json.dumps(urllib.parse.parse_qs(decoded_json))
+        quiz_info = dict(json.loads(quiz_info_json))
+        quiz_type = quiz_info["quiz-type"][0]
+        question_number = int(quiz_info["question-number"][0])
+        question_translation = quiz_info["question-translation"][0]
+    except Exception as e:
+        print(">>>", e)
+    print(question_number)
+    quiz_words = random.sample(list(Word.objects.all()), k=question_number)
+
+    if question_translation == "en":
+        for word in quiz_words:
+            word.name, word.translation = word.translation, word.name
+    elif question_translation == "mix":
+        random_indexes = random.sample(range(len(quiz_words)), k=len(quiz_words) // 2)
+        for index in random_indexes:
+            quiz_words[index].name, quiz_words[index].translation = (
+                quiz_words[index].translation,
+                quiz_words[index].name,
+            )
+
+    if quiz_type == "type":
+        return render(request, "type_quiz.html", {"words": quiz_words})
+    elif quiz_type == "choice":
+        pass

@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "quiz_base.html" %}
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/word_definition.css' %}">
     <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
 {% endblock extra_css %}
-{% block content %}
+{% block quiz-block %}
     <script>
         var words = [
                 {% for word in words %}
@@ -14,14 +14,12 @@
                 },
                 {% endfor %}
         ];
-        [words[0].name, words[0].translation]= [words[0].translation,words[0].name]
         var index = 0;
 
         var resultBoxColorClass = "";
         var resultBoxText = "";
         var score = 0;
 
-        
         $(document).ready(function() {
             $("#total").text(words.length);
             updateWord();
@@ -32,7 +30,7 @@
             $("#answer").val("");
 
             if(index == words.length){
-                $(location).prop('href', '{% url "home" %}')
+                $(location).prop("href", "{% url "home" %}")
             }
 
             $("#word").text(words[index].name);
@@ -55,13 +53,13 @@
                     }
 
                     $("#result-text").text(resultBoxText);
-                    $('#result-text').addClass(resultBoxColorClass);
-                    $('#result-box').toggleClass('d-none');
+                    $("#result-text").addClass(resultBoxColorClass);
+                    $("#result-box").toggleClass("d-none");
                 }
                 else{
                     index++;
-                    $('#result-box').toggleClass('d-none');
-                    $('#result-text').removeClass(resultBoxColorClass);
+                    $("#result-box").toggleClass("d-none");
+                    $("#result-text").removeClass(resultBoxColorClass);
                     updateWord();
                 }
             }
@@ -90,4 +88,4 @@
             <div id="result-text" class="result-text text-center p-3 col-8"></div>
         </div>
     </div>
-{% endblock content %}
+{% endblock quiz-block %}

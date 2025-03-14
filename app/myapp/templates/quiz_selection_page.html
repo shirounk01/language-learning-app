@@ -1,0 +1,102 @@
+{% extends "quiz_base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/word_definition.css' %}">
+{% endblock extra_css %}
+{% block quiz-block %}
+    <script>
+        quizInfo = {
+            "quiz-type": null,
+            "question-number": null,
+            "question-translation": null,
+        }
+
+        $(document).on("click", ".dropdown-item", function(e){
+            let value = $(this).attr("value");
+            let text = $(this).text();
+            let el = $(this).closest(".dropdown").find(".dropdown-toggle");
+            el.text(text);
+            quizInfo[el.attr("id")] = value;
+            checkInfo();
+        })
+
+        $(document).on("change", "#question-number", function(e){
+            quizInfo["question-number"] = parseInt($(this).val(), 10);
+            checkInfo();
+        })
+        
+        
+        $(document).on("submit", "#quiz-form", function(e){
+            let queryString = $.param(quizInfo);
+            var encodedData = btoa(queryString); 
+            var urlSafeData = encodeURIComponent(encodedData);
+            window.location.href = "{% url "quiz" %}" + "?" + urlSafeData;
+            return false;
+        })
+        
+        function checkInfo(){
+            let isComplete = !Object.values(quizInfo).includes(null);
+            if(isComplete){
+                $("#next-button").removeClass("d-none");
+            }
+        }
+
+
+    </script>
+    <p class="word-translation mx-4">Select to start the quiz</p>
+    <div class="d-flex justify-content-center">
+        <form class="w-75" id="quiz-form">
+            <div class="form-group row align-items-center">
+                <label class="col-3 col-form-label">Quiz type</label>
+                <div class="col-9">
+                    <div class="dropdown w-100">
+                        <a class="btn btn-outline-primary dropdown-toggle col-12"
+                           type="button"
+                           id="quiz-type"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">Type</a>
+                        <ul class="dropdown-menu w-100">
+                            <li>
+                                <a class="dropdown-item" value="type" href="#">Typing</a>
+                                <a class="dropdown-item" value="choice" href="#">Multiple choices</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row align-items-center">
+                <label class="col-3 col-form-label">Number of Questions</label>
+                <div class="col-9">
+                    <input type="number"
+                           min="4"
+                           id="question-number"
+                           class="form-control"
+                           id="inputPassword"
+                           placeholder="Insert a number">
+                </div>
+            </div>
+            <div class="form-group row align-items-center">
+                <label class="col-3 col-form-label">Question translations</label>
+                <div class="col-9">
+                    <div class="dropdown w-100">
+                        <a class="btn btn-outline-primary dropdown-toggle col-12"
+                           type="button"
+                           id="question-translation"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">Translations</a>
+                        <ul class="dropdown-menu w-100">
+                            <li>
+                                <a class="dropdown-item" value="pl" href="#">Polish to English</a>
+                                <a class="dropdown-item" value="en" href="#">English to Polish</a>
+                                <a class="dropdown-item" value="mix" href="#">Mixed</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row-reverse mt-2 d-none" id="next-button">
+                <button class="btn btn-outline-primary" type="submit">Start quiz</button>
+            </div>
+        </form>
+    </div>
+{% endblock quiz-block %}
