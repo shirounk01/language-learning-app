@@ -10,7 +10,7 @@
       [{{ word.get_part_of_speech_display|lower }}]
       {% if word.gender %}{{ word.gender|lower }}.{% endif %}
       {% if word.number %}{{ word.number|lower }}.{% endif %}
-      {% if word.conjugation %}conj. {{ word.conjugation }}{% endif %}
+      {% if word.verb_class %}conj. {{ word.get_verb_class_display }}{% endif %}
     </div>
     <div class="word-translation hyphens-auto">{{ word.translation }}</div>
     <hr />

@@ -12,7 +12,8 @@ class WordAdmin(admin.ModelAdmin):
         "translation",
         "part_of_speech",
         "gender",
-        "conjugation",
-        "required_case",
+        "number",
+        "verb_class",
+        "required_cases",
     )
-    list_filter = ("part_of_speech", "gender", "conjugation")
+    list_filter = ("part_of_speech", "verb_class")

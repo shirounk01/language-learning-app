@@ -1,5 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/word_definition.css' %}">
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+{% endblock extra_css %}
 {% block content %}
+    <head>
+        <style>
+            .word-dictionary-translation-cell {
+                max-width: 0px !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
+        </style>
+    </head>
     <p class="title">Dictionary</p>
     <table class="table table-striped table-hover">
         <thead>
@@ -11,7 +26,7 @@
                            type="button"
                            data-bs-toggle="dropdown"
                            aria-expanded="false">Part of Speech</a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu w-100">
                             <li>
                                 <a class="dropdown-item" href="{% url "dictionary" %}?pos=All">All</a>
                             </li>
@@ -30,10 +45,11 @@
             {% for word in words %}
                 <tr>
                     <td>
-                        <a href="{% url "definition" %}?definition={{ word.name }}">{{ word.name }}</a>
+                        <a class="text-reset text-dark"
+                           href="{% url "definition" %}?definition={{ word.name }}">{{ word.name }}</a>
                     </td>
                     <td>{{ word.get_part_of_speech_display }}</td>
-                    <td>{{ word.translation }}</td>
+                    <td class="word-dictionary-translation-cell">{{ word.translation }}</td>
                 </tr>
             {% endfor %}
         </tbody>

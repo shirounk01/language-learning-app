@@ -31,7 +31,8 @@
         }
 
         function handleResult(inputVal){
-            if(inputVal == words[index].translation){
+            var answersSplit = words[index].translation.replace(/\ /g, "").split(",")
+            if(inputVal == words[index].translation || $.inArray(inputVal, answersSplit)!=-1){
                 score++;
                 resultBoxColorClass = "bg-correct";
                 resultBoxText = "That is correct!";

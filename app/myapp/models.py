@@ -27,11 +27,12 @@ class Word(models.Model):
         ("PL", "Plural"),
     )
 
-    CONJUGATION = (
+    CLASS = (
         ("I", "I"),
         ("II", "II"),
         ("III", "III"),
         ("IV", "IV"),
+        ("IRR", "Irregular"),
     )
 
     CASES = (
@@ -48,11 +49,9 @@ class Word(models.Model):
     name = models.CharField(max_length=200)
     translation = models.CharField(max_length=200)
     part_of_speech = models.CharField(max_length=3, choices=PART_OF_SPEECH)
-    gender = models.CharField(max_length=10, choices=GENDER, blank=True, null=True)
-    number = models.CharField(max_length=10, choices=NUMBER, default="SG")
-    conjugation = models.CharField(
-        max_length=3, choices=CONJUGATION, blank=True, null=True
-    )
-    required_case = MultiSelectField(
+    gender = models.CharField(max_length=200, choices=GENDER, blank=True, null=True)
+    number = models.CharField(max_length=10, choices=NUMBER, blank=True, null=True)
+    verb_class = models.CharField(max_length=3, choices=CLASS, blank=True, null=True)
+    required_cases = MultiSelectField(
         max_length=100, choices=CASES, max_choices=3, blank=True, null=True
     )

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.core.paginator import Paginator
+from django.db.models.functions import Lower
 
 import random
 import base64
@@ -29,9 +30,11 @@ def dictionary(request):
 
     def retrieve_data(filter):
         if filter in list(pos.keys()):
-            return Word.objects.filter(part_of_speech=pos[filter])
+            return Word.objects.filter(part_of_speech=pos[filter]).order_by(
+                Lower("name")
+            )
         else:
-            return Word.objects.all()
+            return Word.objects.all().order_by(Lower("name"))
 
     page = request.GET.get("page")
 
@@ -40,7 +43,7 @@ def dictionary(request):
         pos_filter = request.session.pop("previous_filter", None)
 
     words_list = retrieve_data(pos_filter)
-    p = Paginator(words_list, 2)
+    p = Paginator(words_list, 10)
     words = p.get_page(page)
 
     request.session["previous_filter"] = pos_filter
