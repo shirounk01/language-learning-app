@@ -48,7 +48,7 @@
                         <a class="text-reset text-dark"
                            href="{% url "definition" %}?definition={{ word.name }}">{{ word.name }}</a>
                     </td>
-                    <td>{{ word.get_part_of_speech_display }}</td>
+                    <td>{{ word.get_part_of_speech_display|lower }}</td>
                     <td class="word-dictionary-translation-cell">{{ word.translation }}</td>
                 </tr>
             {% endfor %}

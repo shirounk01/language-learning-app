@@ -56,7 +56,9 @@ def dictionary(request):
 
 
 def quiz_selection(request):
-    return render(request, "quiz_selection_page.html")
+    return render(
+        request, "quiz_selection_page.html", {"parts_of_speech": Word.PART_OF_SPEECH}
+    )
 
 
 def quiz_end_screen(request):
@@ -70,13 +72,19 @@ def quiz(request):
         decoded_json = base64.b64decode(data).decode("utf-8")
         quiz_info_json = json.dumps(urllib.parse.parse_qs(decoded_json))
         quiz_info = dict(json.loads(quiz_info_json))
+        print(quiz_info)
         quiz_type = quiz_info["quiz-type"][0]
         question_number = int(quiz_info["question-number"][0])
         question_translation = quiz_info["question-translation"][0]
+        cover = quiz_info["cover"][0]
     except Exception as e:
         print(">>>", e)
-    print(question_number)
-    quiz_words = random.sample(list(Word.objects.all()), k=question_number)
+
+    if cover == "all":
+        selected_words = Word.objects.all()
+    else:
+        selected_words = Word.objects.all().filter(part_of_speech=cover)
+    quiz_words = random.sample(list(selected_words), k=question_number)
 
     if question_translation == "en":
         for word in quiz_words:

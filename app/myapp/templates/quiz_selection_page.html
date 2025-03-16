@@ -8,6 +8,7 @@
         quizInfo = {
             "quiz-type": null,
             "question-number": null,
+            "cover": null,
             "question-translation": null,
         }
 
@@ -37,7 +38,7 @@
         function checkInfo(){
             let isComplete = !Object.values(quizInfo).includes(null);
             if(isComplete){
-                $("#next-button").removeClass("d-none");
+                $("#next-button").removeClass("d-none"); 
             }
         }
 
@@ -66,13 +67,34 @@
             </div>
             <div class="form-group row align-items-center">
                 <label class="col-3 col-form-label">Number of Questions</label>
-                <div class="col-9">
+                <div class="col-3">
                     <input type="number"
                            min="4"
+                           max="50"
                            id="question-number"
                            class="form-control"
                            id="inputPassword"
                            placeholder="Insert a number">
+                </div>
+                <label class="col-3 col-form-label">Part of Speech Covered</label>
+                <div class="col-3">
+                    <div class="dropdown w-100">
+                        <a class="btn btn-outline-primary dropdown-toggle col-12"
+                           type="button"
+                           id="cover"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">Part of Speech</a>
+                        <ul class="dropdown-menu w-100">
+                            <li>
+                                <a class="dropdown-item" href="#" value="all">All</a>
+                            </li>
+                            {% for pos in parts_of_speech %}
+                                <li>
+                                    <a class="dropdown-item" href="#" value="{{ pos.0 }}">{{ pos.1 }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="form-group row align-items-center">

@@ -26,7 +26,9 @@
                 return;
             }
 
+            $("#word").text(words[index].name);
             $("#word").attr("href", "{% url "definition" %}?definition=" + words[index].name);
+            $("#word").attr("title", words[index].translation);
 
         }
 
