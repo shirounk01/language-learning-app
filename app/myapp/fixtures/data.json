@@ -2,8 +2,197 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "st\u00f3\u0142",
-      "translation": "table",
+      "name": "szko\u0142a",
+      "translation": "school",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "gwiazda",
+      "translation": "star",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "ryba",
+      "translation": "fish",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "siostra",
+      "translation": "sister",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "kie\u0142basa",
+      "translation": "sausage",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "matka",
+      "translation": "mother",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "c\u00f3rka",
+      "translation": "daughter",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "figa",
+      "translation": "fig",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "r\u0119ka",
+      "translation": "hand/arm",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "milo\u015b\u0107",
+      "translation": "love",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "opowie\u015b\u0107",
+      "translation": "story",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "ni\u0107",
+      "translation": "thread",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "przyja\u017a\u0144",
+      "translation": "friendship",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "my\u015bl",
+      "translation": "thought",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "brew",
+      "translation": "eyebrow",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "chor\u0105giew",
+      "translation": "banner",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "lekcja",
+      "translation": "lesson",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "kolej",
+      "translation": "railway",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "k\u0105piel",
+      "translation": "bath",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "chwila",
+      "translation": "moment",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "aleja",
+      "translation": "avenue",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "sala",
+      "translation": "big room",
       "part_of_speech": "N",
       "gender": "M"
     }
@@ -11,62 +200,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "pok\u00f3j",
-      "translation": "room",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "kot",
-      "translation": "cat",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ch\u0142opiec",
-      "translation": "boy",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "kolega",
-      "translation": "friend",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "dentysta",
-      "translation": "dentist",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "m\u0119\u017cczyzna",
-      "translation": "man",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "kobieta",
-      "translation": "woman",
+      "name": "babcia",
+      "translation": "grandmother",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -74,8 +209,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "ulica",
-      "translation": "street",
+      "name": "t\u0119cza",
+      "translation": "rainbow",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -83,8 +218,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "Polska",
-      "translation": "Poland",
+      "name": "burza",
+      "translation": "storm",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -92,8 +227,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "pani",
-      "translation": "lady",
+      "name": "wie\u017ca",
+      "translation": "tower",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -101,8 +236,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "gospodyni",
-      "translation": "hostess",
+      "name": "podr\u00f3\u017c",
+      "translation": "trip, journey",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -110,8 +245,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "noc",
-      "translation": "night",
+      "name": "owca",
+      "translation": "sheep",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -119,8 +254,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "cz\u0119\u015b\u0107",
-      "translation": "part",
+      "name": "r\u00f3\u017ca",
+      "translation": "rose",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -128,8 +263,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "jesie\u0144",
-      "translation": "autumn",
+      "name": "grusza",
+      "translation": "pear tree",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -137,8 +272,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "wie\u015b",
-      "translation": "village",
+      "name": "jab\u0142o\u0144",
+      "translation": "apple tree",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -146,8 +281,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "mysz",
-      "translation": "mouse",
+      "name": "\u0142\u00f3d\u017a",
+      "translation": "boat",
       "part_of_speech": "N",
       "gender": "F"
     }
@@ -155,8 +290,17 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "okno",
-      "translation": "window",
+      "name": "ga\u0142\u0105\u017a",
+      "translation": "branch",
+      "part_of_speech": "N",
+      "gender": "F"
+    }
+  },
+  {
+    "model": "myapp.Word",
+    "fields": {
+      "name": "jab\u0142ko",
+      "translation": "apple",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -164,8 +308,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "dziecko",
-      "translation": "child",
+      "name": "krzes\u0142o",
+      "translation": "chair",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -173,8 +317,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "\u017cycie",
-      "translation": "life",
+      "name": "pole",
+      "translation": "field",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -182,8 +326,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "morze",
-      "translation": "sea",
+      "name": "rami\u0119",
+      "translation": "arm",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -191,8 +335,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "imi\u0119",
-      "translation": "name",
+      "name": "jagni\u0119",
+      "translation": "baby lamb",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -200,17 +344,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "szczeniak",
-      "translation": "puppy",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "zwierz\u0119",
-      "translation": "animal",
+      "name": "\u017arebi\u0119",
+      "translation": "foal",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -218,8 +353,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "niemowl\u0119",
-      "translation": "baby, infant",
+      "name": "prosi\u0119",
+      "translation": "piget",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -227,8 +362,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "muzeum",
-      "translation": "museum",
+      "name": "kurcz\u0119",
+      "translation": "chick",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -236,8 +371,8 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "gimnazjum",
-      "translation": "secondary school",
+      "name": "piskl\u0119",
+      "translation": "hatchling",
       "part_of_speech": "N",
       "gender": "N"
     }
@@ -245,729 +380,211 @@
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "bia\u0142y",
-      "translation": "white",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "j\u0119zyk",
-      "translation": "language",
+      "name": "sanie",
+      "translation": "sleigh",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "trudny",
-      "translation": "difficult",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "du\u017cy",
-      "translation": "big",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ma\u0142y",
-      "translation": "little",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "dobry",
-      "translation": "good",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "z\u0142y",
-      "translation": "bad",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "wysoki",
-      "translation": "tall, high",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "niski",
-      "translation": "short, low",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "polski",
-      "translation": "Polish",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "d\u0142ugi",
-      "translation": "long",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "drogi",
-      "translation": "dear, expensive",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "drugi",
-      "translation": "second",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "g\u0142upi",
-      "translation": "stupid",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "tani",
-      "translation": "cheap",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "trzeci",
-      "translation": "third",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ostatni",
-      "translation": "last",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "\u015bredni",
-      "translation": "medium",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "p\u0142aszcz",
-      "translation": "coat",
+      "name": "finanse",
+      "translation": "finances",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "samoch\u00f3d",
-      "translation": "car",
+      "name": "okulary",
+      "translation": "glasses",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "ksi\u0105\u017cka",
-      "translation": "book",
+      "name": "urodziny",
+      "translation": "birthday",
       "part_of_speech": "N",
-      "gender": "F"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "by\u0107",
-      "translation": "to be",
-      "part_of_speech": "V",
-      "verb_class": "IRR"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "m\u0142ody",
-      "translation": "young",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "pi\u0119kny",
-      "translation": "beautiful",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "twarz",
-      "translation": "face",
+      "name": "wakacje",
+      "translation": "holiday",
       "part_of_speech": "N",
-      "gender": "F"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "dom",
-      "translation": "house",
+      "name": "usta",
+      "translation": "lips",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "kawiarna",
-      "translation": "cafe",
+      "name": "dro\u017cd\u017ce",
+      "translation": "yeast",
       "part_of_speech": "N",
-      "gender": "F"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "rzecz",
-      "translation": "thing",
+      "name": "imieniny",
+      "translation": "name day",
       "part_of_speech": "N",
-      "gender": "F"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
-    "fields": { "name": "stary", "translation": "old", "part_of_speech": "Adj" }
-  },
-  {
-    "model": "myapp.Word",
     "fields": {
-      "name": "zdj\u0119cie",
-      "translation": "photo",
+      "name": "skrzypce",
+      "translation": "violin",
       "part_of_speech": "N",
-      "gender": "N"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "miasto",
-      "translation": "town",
+      "name": "no\u017cyce",
+      "translation": "scissors",
       "part_of_speech": "N",
-      "gender": "N"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "szeroki",
-      "translation": "wide",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "droga",
-      "translation": "road",
+      "name": "organy",
+      "translation": "organ",
       "part_of_speech": "N",
-      "gender": "F"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "praca",
-      "translation": "work",
+      "name": "chrzciny",
+      "translation": "christening",
       "part_of_speech": "N",
-      "gender": "F"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "smaczny",
-      "translation": "delicious, tasty",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ciasto",
-      "translation": "dough, cake",
+      "name": "spodnie",
+      "translation": "trousers",
       "part_of_speech": "N",
-      "gender": "N"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "zimny",
-      "translation": "cold",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "sklep",
-      "translation": "shop",
+      "name": "schody",
+      "translation": "stairs",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "sloneczny",
-      "translation": "sunny",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "dzie\u0144",
-      "translation": "day",
+      "name": "bli\u017ani\u0119ta",
+      "translation": "twins",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "blok",
-      "translation": "block of flats",
+      "name": "rajstopy",
+      "translation": "tights",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "autor",
-      "translation": "author",
+      "name": "drzwi",
+      "translation": "door",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "znany",
-      "translation": "well-known",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "smutny",
-      "translation": "sad",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "dziewczynka",
-      "translation": "girl",
+      "name": "plecy",
+      "translation": "back",
       "part_of_speech": "N",
-      "gender": "F"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "kraj",
-      "translation": "country",
+      "name": "rodzice",
+      "translation": "parents",
       "part_of_speech": "N",
-      "gender": "M"
+      "gender": "V",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "inteligentny",
-      "translation": "smart",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "s\u0142odki",
-      "translation": "sweet",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "czerwony",
-      "translation": "red",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "\u0142adny",
-      "translation": "nice",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "zimowy",
-      "translation": "wintry",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "cichy",
-      "translation": "quiet",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "weso\u0142y",
-      "translation": "cheerful, happy",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "pyszny",
-      "translation": "delicious",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "mieszkanie",
-      "translation": "apartment",
+      "name": "W\u0142ochy",
+      "translation": "Italy",
       "part_of_speech": "N",
-      "gender": "N"
+      "gender": "NV",
+      "number": "PL"
     }
   },
   {
     "model": "myapp.Word",
     "fields": {
-      "name": "pie\u015b\u0144",
-      "translation": "song",
+      "name": "W\u0119gry",
+      "translation": "Hungary",
       "part_of_speech": "N",
-      "gender": "F"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "chudy",
-      "translation": "thin",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "m\u0105dry",
-      "translation": "wise",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "bogaty",
-      "translation": "rich",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "biedny",
-      "translation": "poor",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "mi\u0142y",
-      "translation": "nice",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "g\u0142odny",
-      "translation": "hungry",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "zm\u0119czony",
-      "translation": "tired",
-      "part_of_speech": "Adj"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "z\u0105b",
-      "translation": "tooth",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ko\u015bci\u00f3\u0142",
-      "translation": "church",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "bank",
-      "translation": "bank",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ptak",
-      "translation": "bird",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "dzwonek",
-      "translation": "bell",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "r\u00f3g",
-      "translation": "horn",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "poci\u0105g",
-      "translation": "train",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "parasol",
-      "translation": "umbrella",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "hotel",
-      "translation": "hotel",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "szpital",
-      "translation": "hospital",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "pa\u0142ac",
-      "translation": "palace",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "tysi\u0105c",
-      "translation": "thousand",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "pieni\u0105dz",
-      "translation": "coin",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "grosz",
-      "translation": "grosz",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "klucz",
-      "translation": "key",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ko\u0144",
-      "translation": "horse",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "ogie\u0144",
-      "translation": "fire",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "tydzie\u0144",
-      "translation": "week",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "li\u015b\u0107",
-      "translation": "leaf",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "nied\u017awied\u017a",
-      "translation": "bear",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "go\u0142\u0105b",
-      "translation": "pigeon",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "karp",
-      "translation": "carp",
-      "part_of_speech": "N",
-      "gender": "M"
-    }
-  },
-  {
-    "model": "myapp.Word",
-    "fields": {
-      "name": "cudowny",
-      "translation": "wonderful",
-      "part_of_speech": "Adj"
+      "gender": "NV",
+      "number": "PL"
     }
   }
 ]

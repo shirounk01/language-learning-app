@@ -20,6 +20,8 @@ class Word(models.Model):
         ("M", "Masculine"),
         ("F", "Feminine"),
         ("N", "Neuter"),
+        ("V", "Virile"),
+        ("NV", "Non-virile"),
     )
 
     NUMBER = (
