@@ -24,7 +24,10 @@ def definition_page(request):
 
 def dictionary(request):
     if not len(request.GET):
-        del request.session["previous_filter"]
+        try:
+            del request.session["previous_filter"]
+        except:
+            pass
 
     pos = {pos[1]: pos[0] for pos in Word.PART_OF_SPEECH}
 
